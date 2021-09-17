@@ -1,0 +1,23 @@
+<h3>{{title}}</h3>
+<hr>
+<ul>
+    <li *ngFor="let hero of heroes; let i=index">{{i+1}}. {{hero}}</li>
+</ul>
+<hr>
+<button (click)="agragarHeroe()">Agregar Heroe</button>
+<button (click)="borrarHeroe()"> Borrar Heroe</button>
+
+<hr>
+<div *ngIf="dropHeroe; else element">
+<h2>Heroe eliminado</h2>
+<small>{{dropHeroe}}</small>
+</div>
+<ng-template #element>
+    <span>No se ha borrado ningun heroe</span>
+</ng-template>
+
+<hr>
+<h2>Heroes eliminados por bloque</h2>
+<ul>
+    <li *ngFor="let heroeDel of heroesEliminados; let i=index">{{heroeDel}}</li>
+</ul>
