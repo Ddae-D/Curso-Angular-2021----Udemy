@@ -43,3 +43,14 @@
   ul{
     list-style-type:none;
   }
+.row{
+  display: flex; /* Ocupa division en dos columnas */
+}
+.col{
+  flex-grow: 1; /*expansion lo pas que se pueda*/
+  margin-right:10px;
+}
+input{
+  display: block;
+  margin:5px;
+}

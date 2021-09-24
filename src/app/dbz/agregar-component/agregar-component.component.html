@@ -1,0 +1,8 @@
+<h3>Agregar <small>{{personaje}} </small></h3>
+<hr>
+<form (ngSubmit)="agregar()"> <!--recibir el evento del formulario es igual al preventDefault del obj del evento-->
+    <input type="text" name="nombre" id="nombre" placeholder="nombre" [(ngModel)]="this.nuevo.nombre"><!--(input)="cambiaNombre( $event )"-->
+        <!--Banana in box, refiere a two binding-->
+    <input type="number" name="poder" id="poder" placeholder="poder" [(ngModel)]="this.nuevo.poder" >
+    <button type="submit" >Agregar</button>
+</form>
