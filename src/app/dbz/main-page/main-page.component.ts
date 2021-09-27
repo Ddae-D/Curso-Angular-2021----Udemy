@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Personajes } from '../interfaces/personajes.interface';
+import { DBZService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-main-page',
@@ -7,36 +8,38 @@ import { Personajes } from '../interfaces/personajes.interface';
   styleUrls: ['./main-page.component.css']
 })
 export class MainPageComponent {
-  personaje:Personajes[] =[{
-    nombre:"GOKU",
-    poder:15000
-  },
-  {
-    nombre:"Vegeta",
-    poder:12000
-  }
-];
+  personajes:Personajes[]=[];
 
   nuevo:Personajes={
-    nombre:"",
-    poder:0
+    nombre:"Maestro Roshi",
+    poder:3000
   }
-
-  public agregar():void {
-    if(this.nuevo.nombre.trim().length==0){//si es 0 la longitud sale del metodo (validaciones automaticas)
-      return;
-    }
-    console.log(this.nuevo);
-    this.personaje.push(this.nuevo);
-    this.nuevo={//reset de propiedades
-      nombre:"",
-      poder:0
-    }
-    console.log(this.personaje);    
+  constructor(private myService:DBZService)
+  {
+    this.personajes = this.myService.personaje;
   }
-
-  cambiaNombre(event:any){
-
-    console.log(this.personaje);
+  
+  agregarPersonaje(personaje:Personajes){
+    // debugger;
+    this.personajes.push(personaje);
+    console.log(this.personajes)
   }
+  
+  // public agregar():void {
+  //   if(this.nuevo.nombre.trim().length==0){//si es 0 la longitud sale del metodo (validaciones automaticas)
+  //     return;
+  //   }
+  //   console.log(this.nuevo);
+  //   this.personajes.push(this.nuevo);
+  //   this.nuevo={//reset de propiedades
+  //     nombre:"",
+  //     poder:0
+  //   }
+  //   console.log(this.personajes);    
+  // }
+
+  // cambiaNombre(event:any){
+
+  //   console.log(this.personajes);
+  // }
 }

@@ -2,11 +2,12 @@
 <hr>
 <div class="row">
     <div class="col">
-        <app-personajes [personaje]='personaje'>
+        <app-personajes>
         </app-personajes>
     </div>
 
     <div class="col">
-        <app-agregar-component [personaje]="personaje" [nuevo]="nuevo"></app-agregar-component>
+        <app-agregar-component [nuevo]="nuevo"><!--(oneEventInsertPersonaje)="agregarPersonaje($event)"-->
+        </app-agregar-component>
     </div>
 </div>
