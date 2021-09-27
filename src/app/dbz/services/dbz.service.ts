@@ -22,6 +22,6 @@ export class DBZService
     }
     agregaPersonaje(p:Personajes){
       this._personajes.push(p);
-
+      console.log("Usuario agregado con exito", p);
     }
 }
